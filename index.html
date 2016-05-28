@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='BookStoreApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Henri Potier Store</title>
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="css/stylesheets/style.css">
+  <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="app.js">
+
+  </script>
+
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Henri Potier Store</h1>
+    <nav>
+      <ul>
+        <li>Livres</li>
+        <li>Panier</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="items_container" ng-controller='StoreCtrl'>
+      <div class="item">
+        <img ng-src="" alt="" class="item_cover">
+        <h3 class="item_title"></h3>
+        <p class="item_price"></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
