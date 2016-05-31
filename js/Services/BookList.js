@@ -1,6 +1,9 @@
-app.service('bookList', ['$http', function ($http){
-    $http.get('http://henri-potier.xebia.fr/books').then(function (data) {
-        bookList = data;
-    });
+app.factory('bookList', ['$http', function ($http){
+   return $http.get('http://henri-potier.xebia.fr/books').success(function (data) {
+        return data;
+    }).error(function(err) {
+      var errMsg = 'Sorry you appear to be offline';
+      return errMsg;
+    })
   }
 ]);

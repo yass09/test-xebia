@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='BookStoreApp'>
+<html lang="en" ng-app='bookStoreApp'>
 <head>
   <meta charset="UTF-8">
   <title>Henri Potier Store</title>
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="css/stylesheets/style.css">
   <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-  <script type="text/javascript" src="app.js">
+  <script type="text/javascript" src="js/app.js"></script>
 
-  </script>
-
-  </script>
+  <script src='node_modules/angular-route/angular-route.min.js'></script>
 </head>
 <body>
   <header>
-    <h1>Henri Potier Store</h1>
+    <a href="#"><h1>Henri Potier Store</h1></a>
     <nav>
       <ul>
-        <li>Livres</li>
-        <li>Panier</li>
+        <a href="#/"><li>Livres</li></a>
+        <a href="/panier"><li>Panier</li></a>
       </ul>
     </nav>
   </header>
-  <main>
-    <div class="items_container" ng-controller='StoreCtrl'>
-      <div class="item">
-        <img ng-src="" alt="" class="item_cover">
-        <h3 class="item_title"></h3>
-        <p class="item_price"></p>
-      </div>
-    </div>
+  <main ng-view>
   </main>
+  <script src='js/Controllers/StoreCtrl.js'></script>
+  <script src='js/Services/BookList.js'></script>
+  <script src='js/Directives/addToCart.js'></script>
 </body>
 </html>
