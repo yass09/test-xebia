@@ -2,28 +2,46 @@ app.directive('addCartButton', function () {
   return {
     restrict: 'E',
     templateUrl: 'js/Directives/addToCart.html',
-    link: function (scope, element, attrs){
-      scope.buttonText = 'Ajouter',
-      scope.quantityAdded = 0,
-      // scope.isbnInCart = [].join(',');
+    link: function (scope, rootScope, element, attrs){
+      scope.quantityCounter = 0,
 
       scope.addQuantity = function() {
-        scope.quantityAdded +=1;
-        console.log(scope.quantityAdded);
+        scope.quantityCounter += 1;
       };
+
       scope.subtractQuantity = function() {
-        if (scope.quantityAdded >= 0){
-          scope.quantityAdded -=1;
-          console.log(scope.quantityAdded);
+        if (scope.quantityCounter > 0){
+          scope.quantityCounter -= 1;
         }
+      };
+
+      scope.quantityTotal = function(array, key){
+        return array.reduce(function (a,b){
+          return a + b[key];
+        }, 0);
       };
 
       scope.addToCart = function(item){
-        for (i = 1; i<= scope.quantityAdded; i++){
+
+        if (scope.cart.includes(item)){
+          item.quantity += scope.quantityCounter;
+        } else {
           scope.cart.push(item);
-          console.log(scope.cart);
+          item.quantity = 0;
+          item.quantity += scope.quantityCounter;
         }
-      }
+
+        rootScope.isbnList += (item.isbn + ',').repeat(scope.quantityCounter);
+        scope.quantityCounter = 0;
+        rootScope.cartQuantity = scope.quantityTotal(scope.cart, 'quantity');
+        console.log(scope.cart);
+        console.log(rootScope.isbnList);
+        console.log('Panier :' + rootScope.cartQuantity);
+
+
+      };
+      // console.log(scope.addToCart);
+
     }
   };
 });

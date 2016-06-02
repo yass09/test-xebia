@@ -1,8 +1,8 @@
 <div class="buttons_container">
   <button type="button" name="button" ng-click='addToCart(book)'>Ajouter au panier</button>
-  <div class="quantityBtns_container">
-    <button type="button" name="button" ng-click='subtractQuantity()'>-</button>
-    <p>{{quantityAdded}}</p>
-    <button type="button" name="button" ng-click='addQuantity()'>+</button>
+  <div class="quantityBtns_container btn-toolbar">
+    <button type="button" name="button" class='btn-group' ng-click='subtractQuantity()'>-</button>
+    <p class="item_quantity btn-group">{{quantityCounter}}</p>
+    <button class='btn-group' type="button" name="button" ng-click='addQuantity()'>+</button>
   </div>
 </div>
