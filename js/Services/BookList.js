@@ -3,7 +3,7 @@ app.factory('bookList', ['$http', function ($http){
         return data;
     }).error(function(err) {
       var errMsg = 'Sorry you appear to be offline';
-      return errMsg;
+      alert(errMsg);
     })
   }
 ]);

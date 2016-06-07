@@ -1,1 +1,11 @@
-div.
+<div class="cart_container" ng-controller='CartCtrl'>
+  <div class="cartItem" ng-repeat='item in cart'>
+    <img ng-src='{{item.cover}}' alt="" class="cartItem_cover">
+    <div class="cartItem_info">
+      <h4 class="cartItem_title">{{item.title}}</h4>
+      <p class="cartItem_price">Prix: {{item.price | currency: '&euro;'}}</p>
+      <p class="cartItem_quantity">Quantité: {{item.quantity}}</p>
+    </div>
+  </div>
+</div>
+<total-calculator></total-calculator>

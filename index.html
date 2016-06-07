@@ -17,14 +17,18 @@
     <nav>
       <ul>
         <a href="#/"><li>Livres</li></a>
-        <a href="/panier"><li>Panier {{cartQuantity}}</li></a>
+        <a href="#/panier"><li>Panier {{cartQuantity}}</li></a>
       </ul>
     </nav>
   </header>
   <main ng-view>
   </main>
   <script src='js/Controllers/StoreCtrl.js'></script>
+  <script src='js/Controllers/CartCtrl.js'></script>
   <script src='js/Services/BookList.js'></script>
   <script src='js/Directives/addToCart.js'></script>
+  <script src='js/Directives/TotalCalculator.js'></script>
+  <script src='js/Services/Discount.js'></script>
+  <script src='js/Services/cartService.js'></script>
 </body>
 </html>
