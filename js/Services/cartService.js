@@ -1,5 +1,6 @@
 app.service('cartService', function (){
-  this.cart;
+  this.cart = [];
+  this.isbnList = new String('');
 
   this.total = function(array, key){
     return array.reduce(function (a,b){

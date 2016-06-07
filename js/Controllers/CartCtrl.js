@@ -1,21 +1,14 @@
-app.controller ('CartCtrl', 'cartService' ['$scope', '$rootScope', function ($scope,$rootScope, cartService) {
-
-  $scope.calculTotal = function(array, key){
-    return array.reduce(function (a,b){
-      return a + b[key];
-    }, 0);
-  };
-
-  $rootScope.subTotal = 0;
-  console.log($rootScope.isbnList);
-  console.log($rootScope.url);
-
-  // $rootScope.subTotal = $scope.calculTotal($scope.cart, 'total');
-    //
-    // discountGet.success(function(data){
-    //   $scope.discount = data;
-    // });
+app.controller('CartCtrl', ['$scope', '$rootScope', 'cartService', 'discountGet', function ($scope, $rootScope, cartService, discountGet) {
+  discountGet.success(function(data){
+    $scope.discount = data;
     // console.log($scope.discount);
+  });
+
+  $scope.cart = cartService.cart;
+  $scope.subTotal = 0;
+  $scope.subTotal = cartService.total($scope.cart, 'total');
+
+
 
 
 

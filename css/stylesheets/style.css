@@ -32,58 +32,63 @@ main {
   width: 100%;
   padding: 10vh 5vh;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-/* line 33, ../sass/style.sass */
+/* line 32, ../sass/style.sass */
 main .items_container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-/* line 38, ../sass/style.sass */
+/* line 37, ../sass/style.sass */
+main .items_container .btn {
+  align-self: flex-start;
+}
+/* line 40, ../sass/style.sass */
 main .items_container .item {
   width: 12%;
   margin: 15px;
 }
-/* line 42, ../sass/style.sass */
+/* line 44, ../sass/style.sass */
 main .items_container .item .item_cover {
   width: 200px;
   height: auto;
 }
-/* line 46, ../sass/style.sass */
+/* line 48, ../sass/style.sass */
 main .items_container .item .buttons_container {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: flex-end;
 }
-/* line 59, ../sass/style.sass */
+/* line 61, ../sass/style.sass */
 main .cart_container {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   max-width: 50%;
 }
-/* line 65, ../sass/style.sass */
+/* line 67, ../sass/style.sass */
 main .cart_container .cartItem {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin-bottom: 20px;
   flex-grow: 1;
 }
-/* line 71, ../sass/style.sass */
+/* line 73, ../sass/style.sass */
 main .cart_container .cartItem .cartItem_info {
   text-align: right;
 }
-/* line 74, ../sass/style.sass */
+/* line 76, ../sass/style.sass */
 main .cart_container .cartItem .cartItem_cover {
   width: 100px;
   height: auto;
 }
-/* line 78, ../sass/style.sass */
-main .cart_subTotal {
+/* line 80, ../sass/style.sass */
+main .total_container {
   border-top: 3px solid white;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
