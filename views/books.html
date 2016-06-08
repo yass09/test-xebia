@@ -1,9 +1,11 @@
-<div class="items_container" ng-controller='StoreCtrl'>
+<div class="books_container">
   <a href="#/panier" ng-show='activeCart' ng-click='removeVirgule()'><button class="btn">Aller au Panier</button></a>
-  <div class="item" ng-repeat='book in books'>
-    <img ng-src="{{book.cover}}" alt="" class="item_cover">
-    <h3 class="item_title">{{book.title}}</h3>
-    <p class="item_price">{{book.price | currency: '&euro;'}}</p>
-    <add-cart-button></add-cart-button>
+  <div class="items_container" ng-controller='StoreCtrl'>
+    <div class="item" ng-repeat='book in books'>
+      <img ng-src="{{book.cover}}" alt="" class="item_cover">
+      <h3 class="item_title">{{book.title}}</h3>
+      <p class="item_price">{{book.price | currency: '&euro;'}}</p>
+      <add-cart-button></add-cart-button>
+    </div>
   </div>
 </div>

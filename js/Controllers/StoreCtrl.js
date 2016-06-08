@@ -8,8 +8,6 @@ app.controller ('StoreCtrl', ['$scope', '$rootScope', 'bookList', 'cartService',
 
     $scope.removeVirgule = function () {
       cartService.isbnList = cartService.isbnList.replace(/(\s+)?.$/, '');
-      console.log(cartService.isbnList);
     }
-  //   $rootScope.url =  'http://henri-potier.xebia.fr/books/'+$scope.isbnList+ '/commercialOffers';
   }
 ]);

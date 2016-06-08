@@ -29,10 +29,6 @@ app.directive('addCartButton', function () {
         cartService.isbnList += (item.isbn + ',').repeat($scope.quantityCounter);
         $scope.quantityCounter = 0;
         $rootScope.cartQuantity = cartService.total(cartService.cart, 'quantity');
-        console.log(cartService.cart);
-        console.log(cartService.isbnList);
-        console.log($scope.activeCart);
-        console.log(cartService.cart.length);
       };
     }]
   };

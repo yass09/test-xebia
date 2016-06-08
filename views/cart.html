@@ -1,4 +1,5 @@
 <div class="cart_container" ng-controller='CartCtrl'>
+  <h1 class="cart_title">Votre panier</h1>
   <div class="cartItem" ng-repeat='item in cart'>
     <img ng-src='{{item.cover}}' alt="" class="cartItem_cover">
     <div class="cartItem_info">
@@ -7,5 +8,9 @@
       <p class="cartItem_quantity">Quantité: {{item.quantity}}</p>
     </div>
   </div>
-  <total-calculator></total-calculator>
+  <div class="total_container">
+    <h3>Sous-total: {{subTotal | currency: '&euro;'}}</h3>
+    <h3>Reduction: {{discount}}</h3>
+    <h1>Total: {{totalFinal | currency: '&euro;'}}</h1>
+  </div>
 </div>
