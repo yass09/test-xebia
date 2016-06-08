@@ -1,4 +1,4 @@
-app.controller ('StoreCtrl', ['$scope', '$rootScope', 'bookList', 'cartService', 'discountGet', function ($scope,$rootScope,bookList, cartService, discountGet) {
+app.controller ('StoreCtrl', ['$scope', '$rootScope', 'bookList', 'cartService', function ($scope,$rootScope,bookList, cartService) {
     bookList.success(function (data){
       $scope.books = data;
     });
